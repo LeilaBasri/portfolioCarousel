@@ -13,6 +13,8 @@
     display: flex;
     flex-direction: row;
     align-items: start;
+    width: 100%;
+    min-height: 400px;
     padding: 2em 0 3em;
     margin: 0;
     transition: all .2s ease-in-out;
@@ -25,22 +27,34 @@
     position: relative;
     display: flex;
     align-content: start;
+    width: 10%;
+    height: 500px;
     margin: 0 10px;
     padding: 0;
-    flex: 1 1 10%;
-    height: var(--height);
+    opacity: .8;
+    flex: 10%;
     overflow: hidden;
     background: rgba(255,255,255,0.2);
     border-radius: 16px;
     transform: translate3d(0,0,0.1px);
     box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 15px 2px, rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
+.portfolioItem.active{
+    flex: 30%;
+    transform: translateX(0px); 
+    transition-duration: 0.66s;
+    opacity: 1;
+}
+.portfolioItem.active:hover{
+    flex: 33%;
+
+}
 .portfolioItem,.portfolioItem * {
     transition: all .6s cubic-bezier(.55,.24,.18,1);
     user-select: none;
 }
 .portfolioItem:hover{
-    width: 120%;
+    flex: 20%;
     transition: all .2s ease-in-out;
     -wekit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
@@ -51,6 +65,8 @@
 .portfolioImage img{
     display: block;
     position: absolute;
+    width: 350px;
+    height: 500px;
     height: 100%;
     left: 50%;
     top: 50%;
@@ -69,6 +85,13 @@
     opacity: 1;
     background: linear-gradient(160deg, rgba(2,0,36,0) 40%, rgba(118,221,136,.5) 70%, rgba(0,255,246,.6) 100%);
     transition: all .66s cubic-bezier(.55,.24,.18,1);
+}
+.portfolioItem.active::after{
+    transform: translateY(100%); 
+}
+.portfolioItem.active *{
+    filter: none !important;
+    opacity: 1;
 }
 .portfolioItem[data-active]::after {
     transform: translateY(100%);
