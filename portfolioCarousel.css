@@ -32,7 +32,6 @@
     margin: 0 10px;
     padding: 0;
     opacity: .8;
-    flex: 10%;
     overflow: hidden;
     background: rgba(255,255,255,0.2);
     border-radius: 16px;
@@ -40,12 +39,14 @@
     box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 15px 2px, rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
 .portfolioItem.active{
+    width: 30%;
     flex: 30%;
     transform: translateX(0px); 
     transition-duration: 0.66s;
     opacity: 1;
 }
 .portfolioItem.active:hover{
+    width: 33%;
     flex: 33%;
 
 }
@@ -54,6 +55,7 @@
     user-select: none;
 }
 .portfolioItem:hover{
+    width: 20%;
     flex: 20%;
     transition: all .2s ease-in-out;
     -wekit-transition: all .2s ease-in-out;
@@ -65,9 +67,8 @@
 .portfolioImage img{
     display: block;
     position: absolute;
-    width: 350px;
+    width: 400px;
     height: 500px;
-    height: 100%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
